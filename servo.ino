@@ -16,6 +16,7 @@ void setup() {
   pinMode(buttonPin, INPUT);
 }
 
+// initializes booleans 
 boolean done1 = false;
 boolean done2 = false;
 boolean done3 = false;
