@@ -1,22 +1,32 @@
 #include <Servo.h>
 
 Servo myservo1;
+Servo myservo2;
+Servo myservo3;
+Servo myservo4;
+Servo myservo5;
+
 const int buttonPin1 = 2;
 const int buttonPin2 = 3;
 const int buttonPin3 = 4;
 const int buttonPin4 = 5;
-const int buttonPin5 = 6;
+const int buttonPin5 = 6
+
+;
 
 void setup() {
-  myservo1.attach(9);  //attaches the servo on pin 9
-  myservo2.attach(10);
-  myservo3.attach(11);
-  myservo4.attach(12);
-  myservo5.attach(13);
-  pinMode(buttonPin, INPUT);
+  myservo1.attach(8);  //attaches the servo on pin 9
+  myservo2.attach(9);
+  myservo3.attach(10);
+  myservo4.attach(11);
+  myservo5.attach(12);
+  pinMode(buttonPin1, INPUT);
+  pinMode(buttonPin2, INPUT);
+  pinMode(buttonPin3, INPUT);
+  pinMode(buttonPin4, INPUT);
+  pinMode(buttonPin5, INPUT);
 }
 
-// initializes booleans 
 boolean done1 = false;
 boolean done2 = false;
 boolean done3 = false;
@@ -63,10 +73,10 @@ void loop() {
   {
      if (digitalRead(buttonPin5) == HIGH) {
      myservo5.write(90);
-     done5 = true;
      } 
      else {
       myservo5.write(0);
      }
   }
 }
+
