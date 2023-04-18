@@ -1,29 +1,30 @@
 #include <Servo.h>
 
-//Limited to 4 servos
+//Using 3 servos with 4 buttons
 Servo myservo1;
 Servo myservo2;
 Servo myservo3;
-Servo myservo4;
 
 const int buttonPin1 = 2;
 const int buttonPin2 = 3;
 const int buttonPin3 = 4;
 const int buttonPin4 = 5;
-const int buttonPin5 = 6;
 
 void setup() {
-  
+
   myservo1.attach(8);
   myservo2.attach(9);
   myservo3.attach(10);
-  myservo4.attach(11);
 
   pinMode(buttonPin1, INPUT);
   pinMode(buttonPin2, INPUT);
   pinMode(buttonPin3, INPUT);
   pinMode(buttonPin4, INPUT);
-  pinMode(buttonPin5, INPUT);
+
+  //Setup servo angles to prevent other servos from rotating.
+  myservo1.write(0);
+  myservo2.write(0);
+  myservo3.write(0);
 }
 
 boolean done1 = false;
@@ -47,17 +48,15 @@ void loop() {
   }
   if (done2 == true) {
     if (digitalRead(buttonPin3) == HIGH) {
-      myservo3.write(90);
+      myservo3.write(180);
       done3 = true;
-    } else {
-      myservo3.write(0);
     }
   }
   if (done3 == true) {
-    if (digitalRead(buttonPin4) == HIGH && digitalRead(buttonPin5) == HIGH) {
-      myservo4.write(90);
+    if (digitalRead(buttonPin4) == HIGH) {
+      myservo3.write(180);
     } else {
-      myservo4.write(0);
+      myservo3.write(0);
     }
   }
 }
