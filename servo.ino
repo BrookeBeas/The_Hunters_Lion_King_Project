@@ -59,9 +59,11 @@ void loop() {
     }
   }
   
-  //after second interaction, move rotating platform on the cliff
-  //if Simba initially placed on button, reveal platform
-  //if Simba and Scar are both placed, rotate platform again to drop down Mufasa
+  /*
+  after second interaction, move rotating platform on the cliff
+  if Simba initially placed on button, reveal platform
+  if Simba and Scar are both placed, rotate platform again to drop down Mufasa
+  */
   if (done2 == true) {
     Serial.print(digitalRead(buttonPin3));
     Serial.println(digitalRead(buttonPin4));
