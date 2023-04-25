@@ -7,3 +7,5 @@ Players can interact with Scar, Simba, and Mufasa to see dialogue and action.
 Four arduinos will be used for this project, each with a unique interaction.
 
 ![alt text](https://github.com/BrookeBeas/The_Hunters_Lion_King_Project/blob/main/Callout%20Sheet.png)
+
+Final Product Callout Sheet
