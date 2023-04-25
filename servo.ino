@@ -11,6 +11,7 @@ const int buttonPin2 = 3;
 const int buttonPin3 = 4;
 const int buttonPin4 = 5;
 
+//Set boolean values to create an order of interaction
 boolean done1 = false;
 boolean done2 = false;
 boolean done3 = false;
@@ -37,6 +38,8 @@ void setup() {
 }
 
 void loop() {
+  
+  //move two servos to move Mufasa's position
   if (digitalRead(buttonPin1) == HIGH) {
     myservo1.write(90);
     myservo2.write(90);
@@ -45,6 +48,8 @@ void loop() {
     myservo1.write(0);
     myservo2.write(0);
   }
+  
+  //after first interaction, drop down Simba
   if (done1 == true) {
     if (digitalRead(buttonPin2) == HIGH) {
       myservo3.write(90);
@@ -53,6 +58,10 @@ void loop() {
       myservo3.write(0);
     }
   }
+  
+  //after second interaction, move rotating platform on the cliff
+  //if Simba initially placed on button, reveal platform
+  //if Simba and Scar are both placed, rotate platform again to drop down Mufasa
   if (done2 == true) {
     Serial.print(digitalRead(buttonPin3));
     Serial.println(digitalRead(buttonPin4));
@@ -62,4 +71,5 @@ void loop() {
       myservo4.write(0);
     }
   }
+  
 }
